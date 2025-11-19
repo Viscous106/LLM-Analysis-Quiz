@@ -1,16 +1,16 @@
 # Web Framework
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-pydantic==2.5.3
-pydantic-settings==2.1.0
-python-dotenv==1.0.0
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv>=1.0.0
 
 # HTTP Client
-aiohttp==3.9.1
-requests==2.31.0
+aiohttp>=3.9.0
+requests>=2.31.0
 
 # Browser Automation
-playwright==1.41.0
+playwright>=1.41.0
 
 # AI/LLM
 google-generativeai>=0.8.0
@@ -22,15 +22,15 @@ openpyxl>=3.1.0  # For Excel files
 xlrd>=2.0.0  # For older Excel files
 
 # PDF Processing
-PyPDF2==3.0.1
-pdfplumber==0.10.3
+PyPDF2>=3.0.0
+pdfplumber>=0.10.0
 
 # Image Processing
-Pillow==10.2.0
+Pillow>=10.3.0
 
 # Visualization
 matplotlib>=3.8.0
 seaborn>=0.13.0
 
 # Utilities
-python-multipart==0.0.6  # For form data
+python-multipart>=0.0.6  # For form data
