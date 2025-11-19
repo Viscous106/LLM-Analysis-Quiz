@@ -13,7 +13,7 @@ requests==2.31.0
 playwright==1.41.0
 
 # AI/LLM
-anthropic==0.17.0
+google-generativeai>=0.8.0
 
 # Data Processing
 pandas==2.1.4
