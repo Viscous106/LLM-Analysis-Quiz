@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  quiz-solver:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - EMAIL=${EMAIL}
+      - SECRET=${SECRET}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CLAUDE_MODEL=${CLAUDE_MODEL:-claude-sonnet-4-5-20250929}
+      - MAX_TOKENS=${MAX_TOKENS:-8000}
+      - HEADLESS=${HEADLESS:-True}
+      - BROWSER_TIMEOUT=${BROWSER_TIMEOUT:-30000}
+      - QUIZ_TIMEOUT=${QUIZ_TIMEOUT:-180}
+      - MAX_RETRIES=${MAX_RETRIES:-2}
+    volumes:
+      - ./temp:/app/temp
+      - ./downloads:/app/downloads
+      - ./quiz_solver.log:/app/quiz_solver.log
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
